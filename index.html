@@ -1,40 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>User Panel</title>
-</head>
-<body>
+<html>
+	<head>
+		<title>User Panel</title>
+		<link rel="stylesheet" type="text/css" href="css.css">
+		
+	</head>
+	<body>
+		<div id="box">
+			<div id="panel">
+				<div id="user_img">
+					<div id="img_border">
+						<img src="images/pic.png" id="img">
+					</div>
+				</div>	
+				<hr>
+				<div id="box_list">
 
-<header>
-    
-    <nav>
-        <h1>LOGO</h1>
-        <ul id="nav-options">
-           <li><a href="#">Thing 1</a></li>
-           <li><a href="#">Thing 2</a></li>
-           <li><a href="#">Thing 3</a></li>
-           <li><a href="#">Thing 4</a></li>
-            <li id="user">
-                <p>My Account</p>
-        
-                    <ul id="user-panel">
-                        <li><a href="">Coupons</a></li>
-                        <li><a href="">Wishlist</a></li>
-                        <li><a href="">Bonus</a></li>
-                        <li><a href="">Cards</a></li>
-                        <li><a href="">Edit </a></li>
-                        <li><a href="">History</a></li>
-                    </ul>
-                
-            </li>
-        </ul>
-        
-    </nav>
-</header>
+					<div id="box_list_0" class="box_list" >
+						<input type="button" id="btn_coupon" value="Coupon" class="btn">
+					</div>
 
-    <script src="script.js"></script>
-</body>
+					<div id="box_list_1" class="box_list" >
+						<input type="button" id="btn_history" value="History" class="btn">
+					</div>
+
+					<div id="box_list_2" class="box_list">
+						<input type="button" id="btn_wish" value="Wishlist" class="btn">
+					</div>
+
+					<div id="box_list_3" class="box_list" >
+						<input type="button" id="btn_bonus" value="Bonus" class="btn">
+					</div>
+
+					<div id="box_list_4" class="box_list" >
+						<input type="button" id="btn_card" value="Card" class="btn">
+					</div>
+
+					<div id="box_list_5" class="box_list" >
+						<input type="button" id="btn_edit" value="Edit Profile" class="btn">
+					</div>
+
+				</div>
+			</div>
+			<div id="content">
+				<div id="coupon" class="content_list">
+					
+				</div>
+				
+				<div id="wishlist" class="content_list">
+					
+				</div>
+
+				<div id="card" class="content_list">
+					
+				</div>
+				
+				<div id="history" class="content_list">
+					
+				</div>
+				
+				<div id="bonus" class="content_list">
+					
+				</div>
+				
+				<div id="editprofile" class="content_list">
+					<div id="info_box">
+				      <form name="info">
+				        User ID<br><input type = "text" name = "user_id" class="input" /><br>
+				        Name<br><input type = "text" name = "name" class="input"/><br>
+				        Surname<br><input type = "text" name = "surname" class="input"/><br>
+				        Date of birth<br><input type = "date" name = "dob" class="input"/><br>
+				        Phone Number<br><input type = "text" name = "number" class="input"/><br>
+				        E-Mail<br><input type = "text" name = "mail" class="input"/><br>
+				        Adress line<br><input type = "text" name = "adress" class="input"/><br>
+				        Postal code<br><input type = "text" name = "code" class="input"/>
+				      </form>
+			    	</div>
+			    	<div id="info_btn">
+						<div id="change_img"  class="btn">
+							<input type="file" id="btn_u" accept="image/*" onchange="loadFile(event)" hidden/>
+							<label for="btn_u">Change image</label>
+						</div>
+						<div id="box_list_5" class="box_list" >
+							<input type="button" id="btn_edit" value="Edit" class="btn">
+						</div>
+			    	</div>	
+				</div>
+			</div> 
+		</div>
+
+
+
+		<script type="text/javascript" src="script.js"></script>
+	</body>
 </html>
