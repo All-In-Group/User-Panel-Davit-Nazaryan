@@ -10,9 +10,9 @@
 	min-width: 1100px;
 }
 #img_border{
-    width: 300px;
-    height: 300px;
-    border: 5px black solid;
+    width: 100px;
+    height: 100px;
+    border: 3px black solid;
     border-radius: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -27,11 +27,20 @@
 }
 #img{
 	width: 100%;
-	max-width: 300px;
+	max-width: 100px;
 	height: 100%;
-	max-height: 300px;
+	max-height: 100px;
 	border-radius: 100%;
 }
+
+#user_id, #user_name, #user_surname, #user_phone {
+    font-size: 20px;
+    padding: 5px;
+    margin: 10px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
 #panel{
 	float: left;
 	padding: 4.5%;
@@ -67,9 +76,129 @@
 }
 
 
+/* history */
 #history{
 	display:block
 }
+
+
+#table {
+    padding: 50px;
+    font-family: sans-serif;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 5px;
+    color: black;
+    border-radius: 20px;
+}
+
+#table th {
+    font-size: 18px;
+    padding: 10px;
+}
+
+#table td {
+    background: #17987a;
+    padding: 10px;
+}
+td .popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555;
+}
+
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation:fadeIn 1s;
+    animation:fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
+/* bonus */
+#bonus_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90px;
+    height: 50px;
+    border: 3px solid #17987a;
+    border-radius: 15px;
+    margin-left: 45%;
+    margin-bottom: 20px;
+}
+
+
+#get_bonus, #use_bonus {
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+    font-family: sans-serif;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: auto;
+}
+
+
+#wish_table{
+	font-size: 25px;
+    width: 87%;
+    text-align: center;
+}
+
+.image_wish {
+    width: 65px;
+    height: 65px;
+}
+
+#card_table {
+    font-size: 25px;
+    width: 87%;
+    text-align: center;
+}
+
+#card_table .image_card {
+    width: 70px;
+    height: 60px;
+}
+
 
 .input{
 	padding: 1px;
