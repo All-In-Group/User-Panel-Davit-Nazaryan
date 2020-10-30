@@ -7,7 +7,7 @@
 	margin-left: auto;
 	border: 1px black solid;
 	border-radius: 5px;
-	min-width: 1100px;
+	min-width: 1110px;
 }
 #img_border{
     width: 100px;
@@ -33,7 +33,7 @@
 	border-radius: 100%;
 }
 
-#user_id, #user_name, #user_surname, #user_phone {
+.info_text {
     font-size: 20px;
     padding: 5px;
     margin: 10px;
@@ -71,8 +71,6 @@
 }
 .content_list{
 	display: none;
-
-
 }
 
 
@@ -82,7 +80,7 @@
 }
 
 
-#table {
+.table {
     padding: 50px;
     font-family: sans-serif;
     text-align: center;
@@ -92,12 +90,12 @@
     border-radius: 20px;
 }
 
-#table th {
+.table th {
     font-size: 18px;
     padding: 10px;
 }
 
-#table td {
+.table td {
     background: #17987a;
     padding: 10px;
 }
@@ -171,7 +169,6 @@ td .popup {
     padding: 5px;
     text-align: center;
     font-family: sans-serif;
-    border-bottom: 1px solid black;
     width: 100%;
     height: auto;
 }

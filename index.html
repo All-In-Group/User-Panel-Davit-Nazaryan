@@ -3,7 +3,7 @@
 	<head>
 		<title>User Panel</title>
 		<link rel="stylesheet" type="text/css" href="css.css">
-		
+		<meta charset="UTF-8">
 	</head>
 	<body>
 		<div id="box">
@@ -48,6 +48,15 @@
 			<div id="content">
 				<div id="coupon" class="content_list">
 					
+					<table class="table">
+                        <tr>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>Price</th>
+                        </tr>
+                        
+                    </table>
+
 				</div>
 				
 				<div id="wishlist" class="content_list">
@@ -72,7 +81,7 @@
 				</div>
 				
 				<div id="history" class="content_list">
-					<table id="table">
+					<table class="table">
                         <tr>
                             <th>Info</th>
                             <th>Order</th>
@@ -89,25 +98,31 @@
 				</div>
 				
 				<div id="editprofile" class="content_list">
-					<div id="info_box">
+
+					<div id="info_box_saved">
+
+					</div>
+
+					<div id="info_box" style="display: none;">
 				      <form name="info">
 				        User ID<br><input type = "text" name = "user_id" class="input" /><br>
 				        Name<br><input type = "text" name = "name" class="input"/><br>
 				        Surname<br><input type = "text" name = "surname" class="input"/><br>
-				        Date of birth<br><input type = "date" name = "dob" class="input"/><br>
 				        Phone Number<br><input type = "text" name = "number" class="input"/><br>
-				        E-Mail<br><input type = "text" name = "mail" class="input"/><br>
+				        Date of birth<br><input type = "date" name = "dob" class="input"/><br>
+				        E-Mail<br><input type = "text" name = "email" class="input"/><br>
 				        Adress line<br><input type = "text" name = "adress" class="input"/><br>
 				        Postal code<br><input type = "text" name = "code" class="input"/>
 				      </form>
 			    	</div>
+
 			    	<div id="info_btn">
 						<div id="change_img"  class="btn">
 							<input type="file" id="btn_u" accept="image/*" onchange="loadFile(event)" hidden/>
 							<label for="btn_u">Change image</label>
 						</div>
 						<div id="box_list_5" class="box_list" >
-							<input type="button" id="btn_edit" value="Edit" class="btn">
+							<input type="button" id="btn_info_edit" value="Edit" class="btn" onclick="changeInfo('edit')">
 						</div>
 			    	</div>	
 				</div>

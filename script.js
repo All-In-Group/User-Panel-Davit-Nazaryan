@@ -76,9 +76,9 @@ let User = {
 	surname: 'Nazaryan',
 	dateOfBirth: '23.07.2002',
 	phoneNum: '+37499323454',
-	email:'davnazaryan17@gmail.com'
-
-
+	email:'davnazaryan17@gmail.com',
+	adress:"Yerevan , Armenia",
+	postalCode:"0062"
 
 
 }
@@ -88,7 +88,7 @@ let User = {
 
 
 
-
+const userInfSaved = document.getElementById('info_box_saved')
 const userInf = document.getElementById('user_info')
 const couponList = document.getElementById('coupon')
 const wishes= document.getElementById('wishlist')
@@ -103,9 +103,14 @@ const populateCoupons=({coupons})=>{
 
 
 	coupons.forEach((element,index) => {
-		couponList.innerHTML+= 
+		couponList.firstElementChild.innerHTML+= 
 		`
-			<p>Coupon ${++index} - ${element}</p>
+		<tr>
+			</div></td>
+			<td>${++index} - ${element}</td>
+			<td>${++index} - ${element}</td>
+			<td>${element.price} Դր.</td>
+		</tr>
 		`
 	});
 
@@ -155,8 +160,8 @@ const populateBonus = ({bonus})=>{
 			${bonus}
 		</p>
 	</div>
-	<p id="get_bonus">Ինչպե՞ս ստանալ միավորներ </p>
-	<p id="use_bonus">Ինչպե՞ս օգտագործել միավորները</p>`
+	<p id="get_bonus">Ինչպե՞ս ստանալ միավորներ </p><hr>
+	<p id="use_bonus">Ինչպե՞ս օգտագործել միավորները</p><hr>`
 }
 
 
@@ -189,14 +194,29 @@ const populateUserInfo = ({userId,name,surname,phoneNum})=>{
 
 	userInf.innerHTML= `
 	
-	<p id="user_id">${userId}</p>
-    <p id="user_name">${name}</p>
-    <p id="user_surname">${surname}</p>
-    <p id="user_phone">${phoneNum}</p>
+	<p class="info_text">${userId}</p>
+    <p class="info_text">${name}</p>
+    <p class="info_text">${surname}</p>
+    <p class="info_text">${phoneNum}</p>
 	`
 
 
 }
+
+const populateUserInfoSaved = ({userId,name,surname,phoneNum,dateOfBirth,email,adress,postalCode})=>{
+
+	userInfSaved.innerHTML= `
+	
+	<p class="info_text"> User Id: ${userId}</p>
+    <p class="info_text"> Name: ${name}</p>
+    <p class="info_text"> Surname: ${surname}</p>
+    <p class="info_text"> Phone Number : ${phoneNum}</p>
+    <p class="info_text"> Date of birth: ${dateOfBirth}</p>
+    <p class="info_text"> E-Mail: ${email}</p>
+    <p class="info_text"> Adress line: ${adress}</p>
+    <p class="info_text"> Postal code: ${postalCode}</p><br>
+	`
+} 
 
 const populatePage = (User)=>{
 	populateCoupons(User)
@@ -205,11 +225,41 @@ const populatePage = (User)=>{
 	populateBonus(User)
 	populateHistory(User)
 	populateUserInfo(User)
+	populateUserInfoSaved(User)
 	
 }
 
 
+const changeInfo = (e)=>{
 
+	if(e == "edit")
+	{
+		userInfSaved.style.display = "none";
+		document.getElementById('info_box').style.display = "block";
+		document.getElementById("btn_info_edit").value = "Save";
+		document.getElementById("btn_info_edit").setAttribute('onclick','changeInfo("save")');
+	}
+	else if(e == "save")
+	{
+		document.getElementById('info_box').style.display = "none";
+		userInfSaved.style.display = "block";
+		document.getElementById("btn_info_edit").value = "Edit";
+		document.getElementById("btn_info_edit").setAttribute('onclick','changeInfo("edit")');
+		console.log(User.userId);
+		User.userId = document.forms.info.user_id.value;
+		console.log(User.userId);
+		User.name = document.forms.info.user_id.name;
+		User.surname = document.forms.info.user_id.surname;
+		User.dateOfBirth = document.forms.info.user_id.dob;
+		User.phoneNum = document.forms.info.user_id.number;
+		User.email = document.forms.info.user_id.email;
+		User.adress = document.forms.info.user_id.adress;
+		User.postalCode = document.forms.info.user_id.code;
+		
+	}
+
+	populatePage(User)
+}
 
 
 const toggle=(e)=>{
